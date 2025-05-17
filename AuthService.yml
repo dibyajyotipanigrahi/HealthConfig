@@ -10,5 +10,10 @@ spring:
       ddl-auto: update
     show-sql: true
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+
 server:
   port: 3333

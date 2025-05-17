@@ -9,4 +9,4 @@
     show-sql: true
 
 server:
-  port: 4444
+  port: 3333

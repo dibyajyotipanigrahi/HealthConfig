@@ -10,10 +10,38 @@ spring:
       ddl-auto: update
     show-sql: true
 
-  boot:
-    admin:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: dibyajyoti.panigrahi.dipu@gmail.com
+    password: suwb rvry ioov qikn
+    protocol: smtp
+    default-encoding: UTF-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+        debug: true
+
+  security:
+    oauth2:
       client:
-        url: http://localhost:1111
+        registration:
+          google:
+            client-id: 210426435809-60emb6u7uq327ob7u5f55sfr7qviuev5.apps.googleusercontent.com
+            # client-secret: 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
+            redirect-uri: "http://localhost:3333/login/oauth2/code/google"
+            authorization-grant-type: authorization_code
+            client-name: Google
 
 server:
   port: 3333
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

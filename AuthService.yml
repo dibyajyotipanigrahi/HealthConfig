@@ -10,22 +10,6 @@ spring:
       ddl-auto: update
     show-sql: true
 
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: dibyajyoti.panigrahi.dipu@gmail.com
-    password: suwb rvry ioov qikn
-    protocol: smtp
-    default-encoding: UTF-8
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-            required: true
-        debug: true
-
   boot:
     admin:
       client:

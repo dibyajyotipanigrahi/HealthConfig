@@ -1,4 +1,15 @@
 spring:
+  application:
+    name: email-service
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111  # URL of your Spring Boot Admin Server
+        instance:
+          service-host-type: ip
+        username: admin  # optional if your Admin Server requires auth
+        password: admin  # optional if your Admin Server requires auth
+
   mail:
     host: smtp.gmail.com
     port: 587
@@ -14,3 +25,11 @@ spring:
 server:
   port: 4444
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

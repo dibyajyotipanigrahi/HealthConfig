@@ -26,13 +26,17 @@ spring:
             required: true
         debug: true
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111
+
   security:
     oauth2:
       client:
         registration:
           google:
             client-id: 210426435809-60emb6u7uq327ob7u5f55sfr7qviuev5.apps.googleusercontent.com
-            # client-secret: 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
             redirect-uri: "http://localhost:3333/login/oauth2/code/google"
             authorization-grant-type: authorization_code
             client-name: Google

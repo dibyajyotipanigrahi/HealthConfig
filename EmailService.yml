@@ -3,7 +3,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: dibyajyoti.panigrahi.dipu@gmail.com
-    password: your-app-password
+    password: suwb rvry ioov qikn
     properties:
       mail:
         smtp:

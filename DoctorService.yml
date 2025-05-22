@@ -1,4 +1,7 @@
 spring:
+  application:
+    name: DoctorService
+
   datasource:
     url: jdbc:mysql://localhost:3306/Health
     username: root
@@ -7,19 +10,24 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update      # automatically update DB schema on startup (use carefully in production)
-    show-sql: true          # print SQL queries to console for debugging
+      ddl-auto: update
+    show-sql: true
 
-boot:
-  admin:
-    client:
-      url: http://localhost:1111  # Spring Boot Admin Server URL for client registration
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111
+        instance:
+          prefer-ip: true
 
 server:
-  port: 8082                    # Your application's HTTP port
+  port: 8081
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"             # expose all actuator endpoints over HTTP
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

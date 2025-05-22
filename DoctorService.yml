@@ -16,7 +16,7 @@ boot:
       url: http://localhost:1111  # Spring Boot Admin Server URL for client registration
 
 server:
-  port: 8081                    # Your application's HTTP port
+  port: 8082                    # Your application's HTTP port
 
 management:
   endpoints:

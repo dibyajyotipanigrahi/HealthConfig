@@ -1,7 +1,4 @@
 spring:
-  application:
-    name: DoctorService
-
   datasource:
     url: jdbc:mysql://localhost:3306/Health
     username: root
@@ -12,16 +9,20 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
 
   boot:
     admin:
       client:
         url: http://localhost:1111
         instance:
-          prefer-ip: true
+          service-url: http://localhost:8082
+        auto-registration: true
 
 server:
-  port: 8081
+  port: 8082
 
 management:
   endpoints:
@@ -31,3 +32,7 @@ management:
   endpoint:
     health:
       show-details: always
+  metrics:
+    export:
+      simple:
+        enabled: true
